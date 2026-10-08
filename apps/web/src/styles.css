@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono&display=swap");
+
+:root {
+  color: #f6f7fb;
+  background: #11131a;
+  font-family: "DM Sans", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(238, 129, 74, 0.16), transparent 34rem), #11131a;
+}
+
+button {
+  border: 0;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+button:focus-visible {
+  outline: 3px solid #f0b27c;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.shell {
+  margin: 0 auto;
+  max-width: 880px;
+  padding: 4rem 1.25rem 2rem;
+}
+
+.hero {
+  margin-bottom: 2.25rem;
+}
+
+.eyebrow {
+  color: #f0b27c;
+  font-family: "Space Mono", monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.65rem;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 5.6rem);
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+  margin-bottom: 1.25rem;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+  letter-spacing: -0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.hero > p:last-child {
+  color: #b5b9c6;
+  font-size: 1.1rem;
+  max-width: 38rem;
+}
+
+.card {
+  background: rgba(31, 34, 45, 0.9);
+  border: 1px solid #3a3e4c;
+  border-radius: 1.5rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.22);
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+}
+
+.card-heading,
+.task-row {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.card-heading {
+  border-bottom: 1px solid #3a3e4c;
+  padding-bottom: 1.25rem;
+}
+
+.secondary,
+.primary,
+.complete {
+  padding: 0.7rem 1rem;
+}
+
+.secondary {
+  background: #2a2e3b;
+  color: #f6f7fb;
+}
+
+.primary {
+  background: #ec8b51;
+  color: #1b1512;
+}
+
+.complete {
+  background: #9bd6bb;
+  color: #14221b;
+}
+
+.status {
+  color: #9bd6bb;
+  min-height: 1.6rem;
+  padding: 1rem 0 0;
+}
+
+.task-list {
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.task-row {
+  background: #252936;
+  border: 1px solid #3a3e4c;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.task-title,
+.task-state {
+  display: block;
+}
+
+.task-title {
+  font-weight: 700;
+}
+
+.task-state {
+  color: #a8adba;
+  font-size: 0.86rem;
+  margin-top: 0.25rem;
+}
+
+.state-message {
+  color: #b5b9c6;
+  margin: 1.5rem 0 0;
+}
+
+.error {
+  background: rgba(185, 77, 77, 0.16);
+  border: 1px solid #b94d4d;
+  border-radius: 0.9rem;
+  color: #ffd8d8;
+  padding: 1rem;
+}
+
+.error p {
+  margin-bottom: 1rem;
+}
+
+.footer {
+  color: #7f8492;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.86rem;
+  gap: 0.7rem 1.5rem;
+  justify-content: space-between;
+  padding: 1.4rem 0;
+}
+
+@media (max-width: 600px) {
+  .shell {
+    padding-top: 2.5rem;
+  }
+
+  .card-heading,
+  .task-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .card-heading {
+    align-items: stretch;
+  }
+
+  .task-row button {
+    width: 100%;
+  }
+}

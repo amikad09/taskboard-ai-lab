@@ -1,0 +1,38 @@
+name: Verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  finite-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Install pnpm and the pinned Node.js runtime
+        uses: pnpm/setup@v3
+        with:
+          version: 12.10.1
+          runtime: node@24.21.0
+          cache: true
+          require-lockfile: true
+
+      - name: Install Encore CLI
+        run: curl --fail --silent --show-error --location https://encore.dev/install.sh | bash
+
+      - name: Add Encore CLI to PATH
+        run: echo "$HOME/.encore/bin" >> "$GITHUB_PATH"
+
+      - name: Run the finite proof route
+        run: pnpm verify

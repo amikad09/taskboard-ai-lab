@@ -1,0 +1,7 @@
+{
+  "extends": "@taskboard/typescript-config/node.json",
+  "compilerOptions": {
+    "types": ["node", "vitest/globals"]
+  },
+  "include": ["src", "tests"]
+}

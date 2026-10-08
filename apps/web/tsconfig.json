@@ -1,0 +1,7 @@
+{
+  "extends": "@taskboard/typescript-config/web.json",
+  "compilerOptions": {
+    "types": ["vite/client", "vitest/globals"]
+  },
+  "include": ["src", "vite.config.ts"]
+}

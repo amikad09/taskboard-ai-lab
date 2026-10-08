@@ -1,0 +1,11 @@
+--- a/packages/taskboard-core/src/index.ts
++++ b/packages/taskboard-core/src/index.ts
+@@ -32,7 +32,7 @@
+     }
+
+     changed = true;
+-    return { ...task, completed: !task.completed };
++    return { ...task, completed: true };
+   });
+
+   return { tasks: nextTasks, changed };

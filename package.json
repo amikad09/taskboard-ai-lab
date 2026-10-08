@@ -1,0 +1,37 @@
+{
+  "name": "taskboard-ai-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A fictional full-stack workspace for disciplined AI-assisted development.",
+  "type": "module",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "check-types": "turbo run check-types",
+    "check:encore": "pnpm --dir apps/backend check:encore",
+    "lint": "turbo run lint",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "test": "turbo run test",
+    "test:encore": "pnpm --dir apps/backend test:encore",
+    "verify": "pnpm format:check && pnpm check-types && pnpm check:encore && pnpm lint && pnpm test && pnpm test:encore && pnpm build",
+    "clean": "pnpm exec turbo run clean",
+    "dev:backend": "turbo run dev --filter=@taskboard/backend",
+    "dev:web": "turbo run dev --filter=@taskboard/web",
+    "build:packages": "turbo run build --filter=./packages/*",
+    "test:browser": "pnpm build:packages && playwright test",
+    "test:browser:install": "playwright install chromium",
+    "deadcode": "knip --no-progress"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0",
+    "knip": "6.40.0",
+    "oxfmt": "0.72.0",
+    "turbo": "2.11.7",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": "24.21.0"
+  },
+  "packageManager": "pnpm@12.10.1"
+}

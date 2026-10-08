@@ -1,0 +1,28 @@
+{
+  "name": "@taskboard/backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "encore run",
+    "build": "encore check",
+    "check-types": "node node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
+    "check:encore": "encore check",
+    "lint": "node node_modules/oxlint/bin/oxlint services",
+    "test": "node node_modules/vitest/vitest.mjs run",
+    "test:encore": "encore test",
+    "clean": "rm -rf coverage encore.gen .encore"
+  },
+  "dependencies": {
+    "@taskboard/contracts": "workspace:*",
+    "@taskboard/core": "workspace:*",
+    "encore.dev": "1.58.6"
+  },
+  "devDependencies": {
+    "@taskboard/typescript-config": "workspace:*",
+    "@types/node": "26.6.4",
+    "oxlint": "1.87.0",
+    "typescript": "7.0.2",
+    "vitest": "5.0.3"
+  }
+}

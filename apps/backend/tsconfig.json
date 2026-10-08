@@ -1,0 +1,14 @@
+{
+  "extends": "@taskboard/typescript-config/backend.json",
+  "compilerOptions": {
+    "types": ["node", "vitest/globals"],
+    "paths": {
+      "encore.dev/api": ["./node_modules/encore.dev/dist/api/mod.d.ts"],
+      "encore.dev/service": ["./node_modules/encore.dev/dist/service/mod.d.ts"]
+    },
+    "exactOptionalPropertyTypes": false,
+    "noImplicitOverride": false,
+    "verbatimModuleSyntax": true
+  },
+  "include": ["services"]
+}

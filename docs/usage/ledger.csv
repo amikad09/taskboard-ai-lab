@@ -1,0 +1,1 @@
+session_id,task,candidate_id,provider,input_tokens,output_tokens,tool_calls,retries,review_calls,result,notes

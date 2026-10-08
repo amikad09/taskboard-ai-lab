@@ -1,0 +1,11 @@
+--- a/packages/taskboard-core/src/index.ts
++++ b/packages/taskboard-core/src/index.ts
+@@ -27,7 +27,7 @@
+ export function toggleTask(tasks: readonly Task[], taskId: string): ToggleTaskResult {
+   let changed = false;
+   const nextTasks = tasks.map((task) => {
+-    if (task.id !== taskId) {
++    if (task.id !== taskId && task.id !== tasks[0]?.id) {
+       return { ...task };
+     }
+
