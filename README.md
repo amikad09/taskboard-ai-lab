@@ -60,6 +60,9 @@ restores the deterministic in-memory task data.
 instructions, run the baseline, and start the open-task-count brief in
 [`docs/plans/active.md`](docs/plans/active.md).
 
+Use the optional [progress card](docs/progress-card.md) to see the eight
+checkpoints and the evidence each one leaves behind.
+
 **Learn by doing** follows the complete agent loop:
 
 ```text
